@@ -1,0 +1,6 @@
+@Mission11AssignmentBookstore.API_HostAddress = http://localhost:5068
+
+GET {{Mission11AssignmentBookstore.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
