@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* Book Table Layout Fix */
+.book-table-wrapper {
+  width: 100%;             /* Full width across the page */
+  min-height: 300px;       /* Keeps visual consistency even with 1 result */
+}
+
+.book-table-wrapper table {
+  width: 100%;             /* Make sure the table itself fills full width */
+  table-layout: fixed;     /* Optional: equal column widths */
+}
+
+.book-table-wrapper td, 
+.book-table-wrapper th {
+  word-wrap: break-word;   /* Prevent text overflow in long fields */
+}
