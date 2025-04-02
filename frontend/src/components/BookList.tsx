@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Book } from "./types/Book";
-import { useCart } from "./context/CartContext";
+import { Book } from "../types/Book";
+import { useCart } from "../context/CartContext";
 
 
 function BookList() {
@@ -9,6 +9,8 @@ function BookList() {
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
   const { addToCart } = useCart();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
 
   // Sorting State
@@ -18,38 +20,38 @@ function BookList() {
   const [category, setCategory] = useState<string>("");
   const [categories, setCategories] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      const response = await fetch(
-        `https://localhost:5000/OnlineBook/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}&sortDirection=${sortDirection}&category=${category}`
-      );
-      const data = await response.json();
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     const response = await fetch(
+  //       `https://localhost:5000/OnlineBook/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}&sortDirection=${sortDirection}&category=${category}`
+  //     );
+  //     const data = await response.json();
 
-      setBooks(data.books);
+  //     setBooks(data.books);
 
-      // Fix: Ensure totalPages updates AFTER data is fetched
-      const calculatedPages = Math.ceil(data.totalNumBooks / pageSize);
-      setTotalPages(calculatedPages);
+  //     // Fix: Ensure totalPages updates AFTER data is fetched
+  //     const calculatedPages = Math.ceil(data.totalNumBooks / pageSize);
+  //     setTotalPages(calculatedPages);
 
-      // Fix: If current pageNum is too high, reset to last valid page
-      if (pageNum > calculatedPages) {
-        setPageNum(Math.max(1, calculatedPages)); // Ensure it's at least 1
-      }
-    };
+  //     // Fix: If current pageNum is too high, reset to last valid page
+  //     if (pageNum > calculatedPages) {
+  //       setPageNum(Math.max(1, calculatedPages)); // Ensure it's at least 1
+  //     }
+  //   };
 
-    fetchBooks();
-  }, [pageSize, pageNum, sortBy, sortDirection, category]);
+  //   fetchBooks();
+  // }, [pageSize, pageNum, sortBy, sortDirection, category]);
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const response = await fetch(
-        "https://localhost:5000/OnlineBook/GetCategories"
-      );
-      const data = await response.json();
-      setCategories(data);
-    };
-    fetchCategories();
-  }, []);
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     const response = await fetch(
+  //       "https://localhost:5000/OnlineBook/GetCategories"
+  //     );
+  //     const data = await response.json();
+  //     setCategories(data);
+  //   };
+  //   fetchCategories();
+  // }, []);
 
   return (
     <div className="container mt-4">
