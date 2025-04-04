@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission11AssignmentBookstore.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14e04ffb7afb2c8da8856a75619c9e2ea1e629d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission11AssignmentBookstore.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission11AssignmentBookstore.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

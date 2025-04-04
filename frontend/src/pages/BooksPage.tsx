@@ -1,4 +1,4 @@
-import BookList from "../BookList";
+import BookList from "../components/BookList";
 import CartSummary from "../components/CartSummary";
 
 function BooksPage() {
