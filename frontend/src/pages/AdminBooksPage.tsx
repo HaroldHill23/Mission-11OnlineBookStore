@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Book } from "../types/Book";
-import { deleteBook, fetchBooks } from "../api/BooksAPI";
 import NewBookForm from "../components/NewBookForm";
 import EditBookForm from "../components/EditBookForm";
 import Pagination from "../components/Pagination";
+import { deleteBook, fetchBooks } from "../api/BooksAPI";
 
 const AdminBooksPage = () => {
-  const [projects, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [pageSize, setPageSize] = useState<number>(10); //default value ten here as well
@@ -15,21 +15,29 @@ const AdminBooksPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingBook, setEditingBook] = useState<Book | null>(null);
 
-  useEffect(() => {
-    const loadBooks = async () => {
-      try {
-        const data = await fetchBooks(pageSize, pageNum, []);
-        setBooks(data.projects);
-        setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
-      } catch (error) {
-        setError((error as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const [sortBy] = useState<string>("title"); // Sorting is hardcoded to be by title
+  const [sortDirection, setSortDirection] = useState<string>("asc"); // Sorting direction, default is ascending
+  const [category, setCategory] = useState<string>(""); // State for the selected category (single category string)
 
-    loadBooks();
-  }, [pageSize, pageNum]);
+
+useEffect(() => {
+  const loadBooks = async () => {
+    try {
+      // Pass the selected category as a string, and empty array for selectedCategories
+      const data = await fetchBooks(pageSize, pageNum, sortBy, sortDirection, category);
+
+      setBooks(data.books); // Set the books from the response
+      setTotalPages(Math.ceil(data.totalNumBooks / pageSize)); // Set the total pages based on the total number of books
+    } catch (error) {
+      setError((error as Error).message); // Set error state if the fetch fails
+    } finally {
+      setLoading(false); // Set loading to false once fetching is done
+    }
+  };
+
+  loadBooks(); // Call the function to load books
+}, [pageSize, pageNum, sortBy, sortDirection, category]); // Add all relevant state variables as dependencies
+
 
   const handleDelete = async (bookID: number) => {
     const confirmDelete = window.confirm(
@@ -39,7 +47,7 @@ const AdminBooksPage = () => {
 
     try {
       await deleteBook(bookID);
-      setBooks(projects.filter((b) => b.bookID !== bookID));
+      setBooks(books.filter((b) => b.bookID !== bookID));
     } catch (error) {
       alert("Failed to delete book. Please try again.");
     }
@@ -65,8 +73,8 @@ const AdminBooksPage = () => {
         <NewBookForm
           onSuccess={() => {
             setShowForm(false);
-            fetchBooks(pageSize, pageNum, []).then((data) =>
-              setBooks(data.projects)
+            fetchBooks(pageSize, pageNum, sortBy, sortDirection, category).then((data) =>
+              setBooks(data.books)
             );
           }}
           onCancel={() => setShowForm(false)}
@@ -78,8 +86,8 @@ const AdminBooksPage = () => {
           book={editingBook}
           onSuccess={() => {
             setEditingBook(null);
-            fetchBooks(pageSize, pageNum, []).then((data) =>
-              setBooks(data.projects)
+            fetchBooks(pageSize, pageNum, sortBy, sortDirection, category).then((data) =>
+              setBooks(data.books)
             );
           }}
           onCancel={() => setEditingBook(null)}
@@ -89,18 +97,19 @@ const AdminBooksPage = () => {
       <table className="table table-bordered table-striped">
         <thead className="table-dark">
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Regional Program</th>
-            <th>Impact</th>
-            <th>Phase</th>
-            <th>Status</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>ISBN</th>
+            <th>Classification</th>
+            <th>Category</th>
+            <th>Page Count</th>
+            <th>Price</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {projects.map((b) => (
+          {books.map((b) => (
             <tr key={b.bookID}>
               <td>{b.title}</td>
               <td>{b.author}</td>

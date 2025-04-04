@@ -65,7 +65,20 @@ namespace Mission11AssignmentBookstore.API.Controllers
 
         }
 
-                [HttpPost("AddBook")]
+        [HttpGet("GetCategories")]
+        public IActionResult GetCategories()
+        {
+            var categories = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .OrderBy(c => c)
+                .ToList();
+
+            return Ok(categories);
+        }
+
+
+        [HttpPost("AddBook")]
         public IActionResult AddBook([FromBody] Book newBook)
         {
             _bookContext.Books.Add(newBook);
@@ -111,16 +124,5 @@ namespace Mission11AssignmentBookstore.API.Controllers
 
         }
 
-        [HttpGet("GetCategories")]
-        public IActionResult GetCategories()
-        {
-            var categories = _bookContext.Books
-                .Select(b => b.Category)
-                .Distinct()
-                .OrderBy(c => c)
-                .ToList();
-
-            return Ok(categories);
-        }
     }
 }

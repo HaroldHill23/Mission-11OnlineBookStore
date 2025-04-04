@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\controllers\\onlinebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\controllers\\onlinebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\data\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\data\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\controllers\\onlinebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\controllers\\onlinebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|solutionrelative:backend\\mission11assignmentbookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CCB29C60-FE11-050D-9221-56DC88523615}|backend\\Mission11AssignmentBookstore.API\\Mission11AssignmentBookstore.API.csproj|c:\\users\\casey\\source\\repos\\mission11assignmentbookstore\\backend\\mission11assignmentbookstore.api\\data\\onlinebooksdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "backend\\Mission11AssignmentBookstore.API\\Properties\\launchSettings.json",
@@ -78,20 +78,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "OnlineBookController.cs",
               "DocumentMoniker": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Controllers\\OnlineBookController.cs",
               "RelativeDocumentMoniker": "backend\\Mission11AssignmentBookstore.API\\Controllers\\OnlineBookController.cs",
               "ToolTip": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Controllers\\OnlineBookController.cs",
               "RelativeToolTip": "backend\\Mission11AssignmentBookstore.API\\Controllers\\OnlineBookController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAD8vyQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAtwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T19:42:56.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T19:42:56.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\Mission11AssignmentBookstore.API\\appsettings.json",
@@ -103,15 +102,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Mission11AssignmentBookstore.API\\Program.cs",
               "ToolTip": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Program.cs",
               "RelativeToolTip": "backend\\Mission11AssignmentBookstore.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T19:26:01.492Z"
+              "WhenOpened": "2025-03-19T19:26:01.492Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -133,7 +133,7 @@
               "RelativeDocumentMoniker": "backend\\Mission11AssignmentBookstore.API\\Data\\Book.cs",
               "ToolTip": "C:\\Users\\casey\\source\\repos\\Mission11AssignmentBookstore\\backend\\Mission11AssignmentBookstore.API\\Data\\Book.cs",
               "RelativeToolTip": "backend\\Mission11AssignmentBookstore.API\\Data\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T19:17:18.616Z"
             }

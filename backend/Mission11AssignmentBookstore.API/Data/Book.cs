@@ -5,7 +5,7 @@ namespace Mission11AssignmentBookstore.API.Data
     public class Book
     {
         [Key]
-        public string BookID { get; set; }
+        public int BookID { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -26,10 +26,10 @@ namespace Mission11AssignmentBookstore.API.Data
         public string Category { get; set; }
 
         [Required]
-        public string PageCount { get; set; }
+        public int PageCount { get; set; }
 
         [Required]
-        public string Price { get; set; }  //need to be int? 
+        public decimal Price { get; set; }  //need to be int? 
 
     }
 }

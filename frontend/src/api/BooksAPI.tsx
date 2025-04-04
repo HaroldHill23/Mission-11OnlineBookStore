@@ -1,36 +1,37 @@
 import { Book } from "../types/Book";
 
 interface FetchBooksResponse {
-  projects: Book[];
+  books: Book[];
   totalNumBooks: number;
 }
 
 const API_URL = "https://localhost:5000/OnlineBook";
 
 export const fetchBooks = async (
-  pageSize: number,
-  pageNum: number,
-  selectedCategories: string[]
-): Promise<FetchBooksResponse> => {
-  try {
-    const categoryParams = selectedCategories
-      .map((cat) => `projectTypes=${encodeURIComponent(cat)}`)
-      .join("&");
-
-    const response = await fetch(
-      `${API_URL}/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}&sortDirection=${sortDirection}&category=${category}`
-      // { credentials: "include" }  for Security
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch projects");
+    pageSize: number,
+    pageNum: number,
+    sortBy: string,
+    sortDirection: string,
+    category: string
+  ): Promise<FetchBooksResponse> => {
+    try {
+      const response = await fetch(
+        `${API_URL}/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}&sortDirection=${sortDirection}&category=${category}`
+        // Ensure all query parameters are properly included
+      );
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch books");
+      }
+  
+      return await response.json(); // Parse and return the response as JSON
+    } catch (error) {
+      console.error("Error fetching books:", error); // Log the error to the console for debugging
+      throw error; // Rethrow the error to be handled by the calling function
     }
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching projects:", error);
-    throw error;
-  }
-};
+  };
+  
+
 
 export const addBook = async (newBook: Book): Promise<Book> => {
   try {
